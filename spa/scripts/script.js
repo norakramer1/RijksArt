@@ -58,7 +58,7 @@ function getData() {
     .then(function(collection) {
         console.log(collection)
         for(let i = 0; i < collection.artObjects.length; i++) {
-            fetch('https://www.rijksmuseum.nl/api/nl/collection/' + collection.artObjects[i].objectNumber + 'key=VXCEr6jm&ps=10imgonly=true')
+            fetch('https://www.rijksmuseum.nl/api/nl/collection/' + collection.artObjects[i].objectNumber + '?key=VXCEr6jm&ps=10imgonly=true')
             .then(function(response) {
                 return response.json();
             })
