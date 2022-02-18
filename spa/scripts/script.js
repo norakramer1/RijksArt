@@ -1,8 +1,8 @@
 console.log('we working');
 
 // 1. alle variables
-var key = config.API_KEY;
-const rijksApi = 'https://www.rijksmuseum.nl/api/nl/collection?key=' + key + '&ps=10imgonly=true';
+// var key = config.API_KEY;
+const rijksApi = 'https://www.rijksmuseum.nl/api/nl/collection?key=VXCEr6jm&ps=10imgonly=true';
 
 
 //object-number
@@ -46,12 +46,19 @@ getData()
 function getData() {
     fetch(rijksApi)
     .then(function(response) {
+        // const body = $('section');
+        //     body.insertAdjacentHTML('beforebegin',
+        // `<h2>Nothing to see</h2>`
+        // )
         return response.json();
-    })
+    // }).then(function() {
+    //     let element = document.querySelector("h2");
+    // element.parentNode.removeChild(element);
+     })
     .then(function(collection) {
         console.log(collection)
         for(let i = 0; i < collection.artObjects.length; i++) {
-            fetch('https://www.rijksmuseum.nl/api/nl/collection/' + collection.artObjects[i].objectNumber +'?key=' + key + '&ps=10imgonly=true')
+            fetch('https://www.rijksmuseum.nl/api/nl/collection/' + collection.artObjects[i].objectNumber + 'key=VXCEr6jm&ps=10imgonly=true')
             .then(function(response) {
                 return response.json();
             })
@@ -59,12 +66,14 @@ function getData() {
                 console.log(detailed)
                 const list = $('section ul');
                 list.insertAdjacentHTML('beforeend', 
-                    `<li>
+                    `<li class="fixed-ratio-content">
                     <h2>${detailed.artObject.dating.presentingDate}</h2>
                         <img src="${detailed.artObject.webImage.url}" alt="${detailed.artObject.title}">
                     </li>`
                 )           
-            })
+            }).catch((error) => {
+                console.log('error');
+              });
         }
     }) 
 };
