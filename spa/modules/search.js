@@ -1,5 +1,5 @@
 export function searchCollection() {
-    const searchApi = 'https://www.rijksmuseum.nl/api/nl/collection?key=VXCEr6jm&ps=10imgonly=trueq=';
+    const searchApi = 'https://www.rijksmuseum.nl/api/nl/collection?key=VXCEr6jm&ps=10imgonly=true&q=';
     const input = document.querySelector('input');
 
 
