@@ -91,18 +91,3 @@ ul li img {
     background-color: var(--image-background);
     box-shadow: 10px 10px 46px 0px rgba(0,0,0,0.36);
 }
-
-.fixed-ratio {
-    position: relative;
-    /* overflow: hidden; */
-}
-
-.fixed-ratio-content {
-    height: 100%;
-    max-width: inherit;
-}
-
-.fixed-ratio-16by9 {
-    /* ratio: 100% / (16 / 9) = */
-    padding-bottom: 56.25%;
-}
