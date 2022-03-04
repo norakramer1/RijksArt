@@ -12,7 +12,7 @@ This WebApp is made with HTML, CSS and Vanilla Javascript.
 
 ## Activity diagram
 ![Activity diagram Single Page App](https://github.com/norakramer1/web-app-from-scratch-2122
-/blob/main/spa//images/activity-diagram-spa-nora.png?raw=true)
+/blob/main/spa/images/activity-diagram-spa-nora.png?raw=true)
 
 ## How to use
 You can use this project to make something of your own.
