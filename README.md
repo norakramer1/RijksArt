@@ -18,34 +18,78 @@ You can use this project to make something of your own.
 
 1. Clone this repo
 2. Get your own API key by making an account on [RijksStudio](https://www.example.com)
-3. Make a config.js file to hide your API keys in
 
-- In you terminal navigate to the 'spa' folder, then to 'scripts'
-- Type `touch config.js`
-- In config.js type 
+
+
+## Code, explained
+1. Get data, 
+When you enter the site the data is fetched with the getData function. It returns `response.json` and hands it off to the next function `getAdditionalData` which in turn fetches the Rijksmuseum Detailed API to get even more information.
+
+
 ```
-var config = {
-    API_KEY : ' '
-  }
-  
-  ```
-- Put your API key in between the brackets
-- Link your config.js file in your HTML (that's already done unless you picked a different name for the config file)
+    function getData() {
+        fetch(rijksApi)
+            .then(function (response) {
+                if (response.status >= 200 && response.status <= 299) {
+                loadingState.remove();
+                return response.json();
+            } else {
+                throw Error(response.statusText);
+                }
+            }).then(function (collection) {
+                getAdditionalData(collection)
+            })
 
-4. Put your config file in your gitignore
+            .catch((error) => {
+                console.log('error');
 
-- Add gitignore file in your 'spa' folder
-- Add `#config.js` to it
+                list.insertAdjacentHTML('beforeend',
+                    `<h3>Er ging iets mis, probeer het opnieuw</h3>`)
+            
+                
+            });
 
-5. Add API key to script.js
-- Add variable `var key = config.API_KEY;`
-- Change your API to `key` in all places that your API key is used.
-- Example: 'https://www.your-api-host.com/?query&id=' + token + '&pass=' + key'
+    }
 
-6. Check if config.js is really hidden before you push to Github.
+```
 
-Source on hiding API keys: [How To Hide API Key In Github Repo](https://dev.to/ptprashanttripathi/how-to-hide-api-key-in-github-repo-2ik9)
+2. Render data
+After the data has been fetched it hands it off to the next function; renderData. Which of course renders json data into HTML.
 
+```
+export function renderData(detailed) {
 
+    console.log(detailed)
 
-## 
+    const list = $('section ul');
+    list.insertAdjacentHTML('beforeend',
+        `<li class="fixed-ratio-content">
+                <h2>${detailed.artObject.dating.sortingDate}</h2>
+                    <img src="${detailed.artObject.webImage.url.slice(0, -3)+"=s1000"}" alt="${detailed.artObject.title}">
+                </li>`
+    )
+
+};
+
+```
+3. Search
+Search calls on the RijksData API again but adds the text value entered in the search bar with it by adding it to the URL. It uses the same URL + `&q=` to add the search value to it.
+
+```
+    function getApi() {
+        fetch(searchApi + input.value)
+            .then(function (response) {
+                console.log(response.json)
+                removeDefault.classList.add('hide');
+                return response.json();
+        
+            }).then(function (search) {
+                console.log(search)
+                getAdditionalData(search)
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+    }
+```

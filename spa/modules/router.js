@@ -58,7 +58,13 @@ routie(
 'info': function() {
     // dataGet();
 
-}
+},
+'/:id': id => {
+    getData(id).then(data => {
+      render(data, id)
+    //   updateUI('giphy')
+    });
+  }
 
 
 })
