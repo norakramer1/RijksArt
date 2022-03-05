@@ -56,8 +56,10 @@ export function routes() {
 routie(
     {
 'info': function() {
-console.log('info page')
+    // dataGet();
 
 }
+
+
 })
 };

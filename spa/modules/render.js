@@ -1,6 +1,5 @@
-import {
-    $
-} from './selectel.js'
+
+import { $ } from './selectel.js'
 
 export function renderData(detailed) {
 
