@@ -5,7 +5,12 @@ export function dataGet() {
     const rijksApi = 'https://www.rijksmuseum.nl/api/nl/collection?key=VXCEr6jm&ps=10imgonly=true';
     const loadingState = $('section.loading ul');
     const list = $('section');
+    // const listEl = $$('.search li');
     getData();
+
+
+
+
 
     //3. functions
     function getData() {
@@ -22,7 +27,7 @@ export function dataGet() {
             })
 
             .catch((error) => {
-                console.log('error');
+                console.log(error);
 
                 list.insertAdjacentHTML('beforeend',
                     `<h3>Er ging iets mis, probeer het opnieuw</h3>`)

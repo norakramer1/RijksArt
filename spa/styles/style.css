@@ -17,8 +17,7 @@
 
 
   body {
-      background-color: var(--primary);
-
+    background-color: var(--primary);
   }
 
   section:nth-of-type(1) {
@@ -118,8 +117,6 @@ ul li h2  {
      
 }
 
-
-
 ul li img {
     list-style: none;
     max-height: 300px;
@@ -140,3 +137,65 @@ ul li img {
     }
     
 }
+
+@media only screen and (max-width: 936px) {
+    ul li img {
+       
+        max-height: 200px;
+        max-width: 200px;
+    }
+    ul li h2 {
+        font-size: 250%;
+    }
+    ul li  {
+        padding: 0 1% 10% 1%;
+    }
+
+    input[type="text"] {
+        width: 70%;
+        padding: 2%;
+    }
+
+ form button {
+    padding: 2%;
+ }
+
+    section svg.icon-rijks-logo  {
+
+        max-width: 70%;
+        left: 12%;
+    
+    }
+  }
+
+  @media only screen and (max-width: 410px) {
+    ul li img {
+       
+        max-height: 150px;
+        max-width: 150px;
+    }
+
+    ul li h2 {
+        font-size: 175%;
+    }
+
+    input[type="text"] {
+        width: 70%;
+        padding: 3%;
+    }
+
+ form button {
+    padding: 3%;
+ }
+
+ ul li  {
+    padding: 0 1% 10% 1%;
+}
+
+section svg.icon-rijks-logo  {
+
+    max-width: 70%;
+    left: 12%;
+
+}
+  }
