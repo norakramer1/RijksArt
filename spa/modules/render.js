@@ -14,3 +14,17 @@ export function renderData(detailed) {
     )
 
 };
+
+export function renderSearchData(search) {
+
+    console.log(search)
+
+    const list = $('section ul.search-results');
+    list.insertAdjacentHTML('beforeend',
+        `<li>
+                <h2>${search.artObject.dating.sortingDate}</h2>
+                    <img src="${search.artObject.webImage.url.slice(0, -3)+"=s1000"}" alt="${search.artObject.title}">
+                </li>`
+    )
+
+};
