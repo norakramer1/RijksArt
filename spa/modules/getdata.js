@@ -6,7 +6,7 @@ export function dataGet() {
     const rijksApi = 'https://www.rijksmuseum.nl/api/nl/collection?key=VXCEr6jm&ps=10imgonly=true';
 
     const loadingState = $('section.loading ul');
-    // const list = $('section');
+     const list = $('section');
     // const listEl = $$('.search li');
      getData();
 
