@@ -1,5 +1,5 @@
 
-import { renderData } from '../modules/render.js'
+import { renderData } from './render.js'
 import { renderSearchData } from './render.js'
 
  export function getAdditionalData(collection) {
