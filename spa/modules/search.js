@@ -1,6 +1,6 @@
 import {
     getAdditionalSearchData
-} from './extraData.js'
+} from './extradata.js'
 // import { $ } from './selectel.js'
 import { $$ } from './selectel.js'
 

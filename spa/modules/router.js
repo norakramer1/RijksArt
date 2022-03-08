@@ -14,7 +14,7 @@
 
 
 import '../lib/routie.js'
-import { dataGet } from './getData.js'
+import { dataGet } from './getdata.js'
 
 export function routes() {
 
