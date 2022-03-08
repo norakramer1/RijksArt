@@ -3,7 +3,6 @@ import {
 } from './extradata.js'
 // import { $ } from './selectel.js'
 import { $$ } from './selectel.js'
-const list = $('section');
 
 export function searchCollection() {
     const searchApi = 'https://www.rijksmuseum.nl/api/nl/collection?key=VXCEr6jm&ps=10imgonly=true&q=';
@@ -24,11 +23,6 @@ export function searchCollection() {
                 // console.log(search)
                 getAdditionalSearchData(collection)
             })
-            .catch((error) => {
-                console.log(error);
-                list.insertAdjacentHTML('beforeend',
-                `<h3>Er ging iets mis, probeer het opnieuw</h3>`)
-            });
 
     }
 
