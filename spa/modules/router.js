@@ -13,59 +13,25 @@
 // }
 
 
-
-// function hashChange() {
-//     if (location.hash === '#info') {
-//       console.log("You're visiting a cool feature!");
-//     }
-//   }
-
-
-// routing by: https://dev.to/aminnairi/a-router-without-a-web-server-in-vanilla-javascript-3bmg
-
-// function onRouteChanged() {
-//  console.log(window.location.hash);
-//   const hash = window.location.hash;
-//      const routerView = document.getElementById("router-view");
-
-//      if (!(routerView instanceof HTMLElement)) {
-//        throw new ReferenceError("No router view element available for rendering");
-//      }
-
-//      switch (hash) {
-//        case "#home":
-//          routerView.innerHTML = "<h1>Home page</h1>";
-//          break;
-
-//        case "#info":
-//          routerView.innerHTML = "<h1>info page</h1>";
-  
-//          break;
-
-//        default:
-//          routerView.innerHTML = "<h1>404 - Page Not Found</h1>";
-//          break;
-//      }
-//       }
-
-//   window.addEventListener("hashchange", onRouteChanged);
+import '../lib/routie.js'
+import { dataGet } from './getData.js'
 
 export function routes() {
 
 
-routie(
-    {
-'info': function() {
-    // dataGet();
+routie ({
+  '': function() {
+    dataGet()
+    console.log('home pagina')
+
 
 },
-'/:id': id => {
-    getData(id).then(data => {
-      render(data, id)
-    //   updateUI('giphy')
-    });
-  }
+'info': function() {
+    dataGet();
+    console.log('info pagina')
+
+}
 
 
-})
+  })
 };

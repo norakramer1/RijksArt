@@ -5,6 +5,7 @@
  * copyright Greg Allen 2016
  * MIT License
 */
+
 var Routie = function(w, isModule) {
 
     var routes = [];

@@ -1,5 +1,6 @@
-
-import { getAdditionalSearchData } from './extraData.js'
+import {
+    getAdditionalSearchData
+} from './extraData.js'
 // import { $ } from './selectel.js'
 import { $$ } from './selectel.js'
 
@@ -10,16 +11,13 @@ export function searchCollection() {
 
     function getApi() {
         const removeDefault = $$('section ul li');
-        for(let i = 0; i < removeDefault.length; i++) {
+        for (let i = 0; i < removeDefault.length; i++) {
             removeDefault[i].remove();
         }
         fetch(searchApi + input.value)
             .then(function (response) {
-            
-                console.log(response.json)
                 return response.json();
-                    
-        
+
             }).then(function (collection) {
                 // console.log(search)
                 getAdditionalSearchData(collection)
@@ -31,6 +29,11 @@ export function searchCollection() {
     }
 
     document.querySelector('form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        getApi();
+    });
+
+    document.querySelector('form button').addEventListener('click', function (e) {
         e.preventDefault();
         getApi();
     });
