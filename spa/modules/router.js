@@ -27,7 +27,7 @@ routie ({
 
 },
 'info': function() {
-    dataGet();
+    // dataGet();
     console.log('info pagina')
 
 }
