@@ -7,5 +7,5 @@ import { routes } from '../modules/router.js'
 
  dataGet();
  
- routes();
+//  routes();
 searchCollection();
