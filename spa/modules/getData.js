@@ -1,21 +1,17 @@
 
-// import { router } from '../lib/router.js'
 import { renderData } from './render.js'
 import { $ } from './selectel.js'
-export function dataGet() {
+
+
+ export function getData() {
     const rijksApi = 'https://www.rijksmuseum.nl/api/nl/collection?key=VXCEr6jm&ps=10imgonly=true';
-
+    const list = $('section');
     const loadingState = $('section.loading ul');
-     const list = $('section');
-    // const listEl = $$('.search li');
-     getData();
-
-    //3. functions
- function getData() {
         fetch(rijksApi)
             .then(function (response) {
                 if (response.status >= 200 && response.status <= 299) {
                 loadingState.remove();
+                console.log(rijksApi);
                 return response.json();
             } else {
                 throw Error(response.statusText);
@@ -47,21 +43,4 @@ export function dataGet() {
                     console.log(error);
                 });
         }
-    }
-
-};
-
-export function getDetails(collection) {
-
-    for (let i = 0; i < collection.artObjects.length; i++) {
-        fetch('https://www.rijksmuseum.nl/api/nl/collection/' + collection.artObjects[i].objectNumber + '?key=VXCEr6jm&ps=10imgonly=true')
-            .then(function (response) {
-                return response.json();
-            }).then(function (detailed) {
-                getAdditionalDetails(detailed)
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }
-}
+    };

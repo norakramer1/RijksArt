@@ -1,7 +1,4 @@
-import {
-    getAdditionalSearchData
-} from './extradata.js'
-// import { $ } from './selectel.js'
+import { getAdditionalSearchData } from './extradata.js'
 import { $$ } from './selectel.js'
 
 export function searchCollection() {
