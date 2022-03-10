@@ -27,24 +27,3 @@ export function renderSearchData(search) {
     )
 
 };
-
-export function renderDetails(details) {
-
-    console.log(details)
-
-    const list = $('section');
-    list.insertAdjacentHTML('beforeend',
-        
-    ` <ul class='details'>
-        <li>
-            <img src="${details.artObject.webImage.url.slice(0, -3) + "=s1000"}" alt="${details.artObject.title}">
-                <div>
-                    <h2>${details.artObject.longTitle}</h2>
-                        <p>${details.artObject.plaqueDescriptionEnglish}</p>
-                            <h3>${details.artObject.dating.sortingDate}</h3>
-                 </div>
-        </li>
-    </ul> `
-    )
-
-};

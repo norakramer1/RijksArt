@@ -1,8 +1,9 @@
-import { getAdditionalSearchData } from './extradata.js'
+import { getAdditionalData } from './getData.js'
+import { $ } from './selectel.js'
 import { $$ } from './selectel.js'
 
 export function searchCollection() {
-    const searchApi = 'https://www.rijksmuseum.nl/api/nl/collection?key=VXCEr6jm&ps=10imgonly=true&q=';
+    const searchApi = 'https://www.rijksmuseum.nl/api/nl/collection?key=VXCEr6jm&ps=25imgonly=true&q=';
     const input = document.querySelector('input');
    
 
@@ -18,17 +19,18 @@ export function searchCollection() {
 
             }).then(function (collection) {
                 // console.log(search)
-                getAdditionalSearchData(collection)
+                // getAdditionalSearchData(collection)
+                getAdditionalData(collection)
             })
 
     }
 
-    document.querySelector('form').addEventListener('submit', function (e) {
+    $('form').addEventListener('submit', function (e) {
         e.preventDefault();
         getApi();
     });
 
-    document.querySelector('form button').addEventListener('click', function (e) {
+    $('form button').addEventListener('click', function (e) {
         e.preventDefault();
         getApi();
     });

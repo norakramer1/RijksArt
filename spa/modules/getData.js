@@ -3,20 +3,24 @@ import { renderData } from './render.js'
 import { $ } from './selectel.js'
 
 
+
+
  export function getData() {
-    const rijksApi = 'https://www.rijksmuseum.nl/api/nl/collection?key=VXCEr6jm&ps=10imgonly=true';
+
+  
+    const rijksApi = 'https://www.rijksmuseum.nl/api/nl/collection?key=VXCEr6jm&ps=25&imgonly=true';
     const list = $('section');
     const loadingState = $('section.loading ul');
+    const loadingDetails = $('section.load-details ul');
+   
+
         fetch(rijksApi)
             .then(function (response) {
-                if (response.status >= 200 && response.status <= 299) {
+                loadingDetails.remove();
                 loadingState.remove();
-                console.log(rijksApi);
                 return response.json();
-            } else {
-                throw Error(response.statusText);
-                }
             }).then(function (collection) {
+                console.log(collection)
                 getAdditionalData(collection)
             })
 
@@ -31,9 +35,9 @@ import { $ } from './selectel.js'
 
     }
 
-    function getAdditionalData(collection) {
+export function getAdditionalData(collection) {
         for (let i = 0; i < collection.artObjects.length; i++) {
-            fetch('https://www.rijksmuseum.nl/api/nl/collection/' + collection.artObjects[i].objectNumber + '?key=VXCEr6jm&ps=10imgonly=true')
+            fetch('https://www.rijksmuseum.nl/api/nl/collection/' + collection.artObjects[i].objectNumber + '?key=VXCEr6jm&ps=25&imgonly=true')
                 .then(function (response) {
                     return response.json();
                 }).then(function (detailed) {

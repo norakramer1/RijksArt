@@ -7,3 +7,6 @@ import { locationHashHome } from './modules/router.js'
 searchCollection();
 locationHashChanged();
 locationHashHome();
+
+
+
