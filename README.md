@@ -39,7 +39,7 @@ Activity diagram for looking at an artwork on home
 ![Activity diagram Single Page App](https://github.com/norakramer1/web-app-from-scratch-2122/blob/main/spa/images/activity-diagram-1.png?raw=true)
 
 Activity diagram for searching a term and finding an artwork
-![Activity diagram search Single Page App](https://github.com/norakramer1/web-app-from-scratch-2122/blob/main/spa/images/activity-diagram-2.png?raw=true)
+![Activity diagram search Single Page App](https://github.com/norakramer1/web-app-from-scratch-2122/blob/main/spa/images/actitvity-diagram-2.png?raw=true)
 
 ## How to use
 You can use this project to make something of your own.
