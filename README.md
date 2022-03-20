@@ -14,7 +14,7 @@
 ## What is it?
 Rijksmuseum Single Page App is exactly what it says it is, a single page app using the Rijksmuseum's RijkData API to show a collection of works to the user. Eventually the user should be able to search and filter through the collection by searching dates, artists and names of the works but i'm not quite there yet.. 
 
-All features of the WebApp are going to happen on a single page, so only one HTML file. The user can search or look through the collection and when they click on an image they can read the description, the year it was made and (hopefully) something about the artist.
+All features of the WebApp are going to happen on a single page, so only one HTML file. The user can search or look through the collection and when they click on an image they can read the description and year.
 
 This WebApp is made with HTML, CSS and Vanilla Javascript.
 
